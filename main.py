@@ -7,11 +7,17 @@ from typing import List
 import numpy as np
 import cv2
 from PIL import Image
-import tflite_runtime.interpreter as tflite
+from pathlib import Path
+# import tflite_runtime.interpreter as tflite
 from utils import draw_bb, model_predict, resize, non_max_suppression_fast
+import subprocess
+import os
 
-model = tflite.Interpreter('static/model.tflite')
-model.allocate_tensors()
+
+# model_path = Path("static", "model.tflite")
+# model = tflite.Interpreter(str(model_path))
+# model.allocate_tensors()
+# print(model.get_input_details())
 
 head_html = """
 <head>
@@ -32,12 +38,17 @@ async def create_upload_files(file: UploadFile = File(...)):
     image = await file.read()
     image = np.frombuffer(image, np.uint8)
     image = cv2.imdecode(image, cv2.IMREAD_COLOR)
-    image_resized = resize(image)
-    image_rgb = cv2.cvtColor(image_resized, cv2.COLOR_BGR2RGB)
-    bb = model_predict(model, np.array(image_rgb, dtype=np.float32))
-    draw_bb(image_resized, bb, name)
-    # pillow_image = Image.fromarray(image_rgb)
-    # pillow_image.save('static/' + name)
+
+    # image_resized = resize(image)
+    image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    # bb = model_predict(model, np.array(image_rgb, dtype=np.float32))
+    # draw_bb(image_resized, bb, name)
+    pillow_image = Image.fromarray(image_rgb)
+    pillow_image.save('static/' + name)
+
+    # subprocess.run(["python yolov5/detect.py --weights yolov5/run/best.pt --img 640 --conf 0.5 --source static/images/978.jpg"])
+
+    os.system("python yolov5/detect.py --weights static/pretrained/best2.pt --img 640 --conf 0.5 --source static/" + name)
 
     content = head_html + \
         """
