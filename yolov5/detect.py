@@ -84,7 +84,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         source = check_file(source)  # download
 
     # Directories
-    save_dir = Path('static')
+    save_dir = Path('result')
     # save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
     # (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
 
