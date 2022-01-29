@@ -1,5 +1,7 @@
 # ML_Project_FastAPI
-Deploy ML model with Fast API and Heroku
+Deploy ML model with Fast API and Heroku.
+
+This is [Video demo in Youtube](https://youtu.be/zsxWKfsG3G0)
 
 # Clone project
 ```bash
