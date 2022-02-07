@@ -6,6 +6,9 @@ This is [Video demo in Youtube](https://youtu.be/zsxWKfsG3G0)
 # Clone project
 ```bash
 git clone https://github.com/TruongChiDien/ML_Project_FastAPI.git
+cd ML_Project_FastAPI
+mkdir files_uploaded
+mkdir result
 ```
 
 # Install dependencies
