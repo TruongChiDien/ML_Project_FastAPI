@@ -2,3 +2,4 @@
 *.mp4
 result/
 files_uploaded/
+.env/
