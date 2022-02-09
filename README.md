@@ -1,5 +1,5 @@
 # ML_Project_FastAPI
-Deploy ML model with Fast API and Heroku.
+A demo of ML final project with Fast API
 
 This is [Video demo in Youtube](https://youtu.be/zsxWKfsG3G0)
 
