@@ -3,6 +3,10 @@ A demo of ML final project with Fast API
 
 This is [Video demo in Youtube](https://youtu.be/zsxWKfsG3G0)
 
+# Members:
+  - Trương Trí Diễn
+  - Trần Hoàn Đức Duy
+
 # Clone project
 ```bash
 git clone https://github.com/TruongChiDien/ML_Project_FastAPI.git
